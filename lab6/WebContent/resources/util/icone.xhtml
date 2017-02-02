@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:composite="http://java.sun.com/jsf/composite" xmlns:h="http://java.sun.com/jsf/html">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Insert title here</title>
+</head>
+<composite:interface>
+	<composite:attribute name="image" required="true"></composite:attribute>
+	
+	<composite:attribute name="style"></composite:attribute> 
+	<composite:attribute name="actionMethod" method-signature="java.lang.String action()"></composite:attribute>
+</composite:interface>
+
+<composite:implementation>
+<h:form>
+	<h:commandLink action="#{cc.attrs.actionMethod}"  value="#{cc.attrs.label}">
+	 <h:graphicImage url="#{cc.attrs.image}" styleClass="#{cc.attrs.style}"></h:graphicImage> 
+	</h:commandLink>
+</h:form>
+</composite:implementation>
+</html>
